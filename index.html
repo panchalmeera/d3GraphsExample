@@ -31,44 +31,44 @@
             <script>
                 function InitChart() {
                     var data = [{
-                        "sale": "202",
-                        "year": "2000"
+                        "time": "2.5",
+                        "flight_number": "2000"
                     }, {
-                        "sale": "215",
-                        "year": "2002"
+                        "time": "3.4",
+                        "flight_number": "2002"
                     }, {
-                        "sale": "179",
-                        "year": "2004"
+                        "time": "5",
+                        "flight_number": "2004"
                     }, {
-                        "sale": "199",
-                        "year": "2006"
+                        "time": "8",
+                        "flight_number": "2006"
                     }, {
-                        "sale": "134",
-                        "year": "2008"
+                        "time": "4",
+                        "flight_number": "2008"
                     }, {
-                        "sale": "176",
-                        "year": "2010"
+                        "time": "1.7",
+                        "flight_number": "2010"
                     }];
 
 
                     var data2 = [{
-                        "sale": "152",
-                        "year": "2000"
+                        "time": "3",
+                        "flight_number": "2000"
                     }, {
-                        "sale": "189",
-                        "year": "2002"
+                        "time": "3.4",
+                        "flight_number": "2002"
                     }, {
-                        "sale": "179",
-                        "year": "2004"
+                        "time": "7",
+                        "flight_number": "2004"
                     }, {
-                        "sale": "199",
-                        "year": "2006"
+                        "time": "8.2",
+                        "flight_number": "2006"
                     }, {
-                        "sale": "134",
-                        "year": "2008"
+                        "time": "4.5",
+                        "flight_number": "2008"
                     }, {
-                        "sale": "176",
-                        "year": "2010"
+                        "time": "5",
+                        "flight_number": "2010"
                     }];
 
 
@@ -84,7 +84,7 @@
 
                         xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([2000, 2010]),
 
-                        yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([134, 215]),
+                        yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, 24]),
 
                         xAxis = d3.svg.axis()
                         .scale(xScale),
@@ -105,10 +105,10 @@
 
                     var lineGen = d3.svg.line()
                         .x(function(d) {
-                            return xScale(d.year);
+                            return xScale(d.flight_number);
                         })
                         .y(function(d) {
-                            return yScale(d.sale);
+                            return yScale(d.time);
                         })
                         .interpolate("basis");
 
